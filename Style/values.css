@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Long+Cang&family=Ma+Shan+Zheng&family=Zhi+Mang+Xing&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Liu+Jian+Mao+Cao&display=swap');
+
+:root {
+    --書法體: 'Zhi Mang Xing', cursive;
+    /*較亂*/
+    --書法體2: "Long Cang", cursive;
+    /*較正*/
+    --書法體3: "Ma Shan Zheng", cursive;
+    /*正*/
+    --書法體4: "Liu Jian Mao Cao", cursive;
+}
+
+@property --playerhp-w {
+    syntax: '<percentage>';
+    inherits: false;
+    initial-value: 100%;
+}
+
+@property --playermp-w {
+    syntax: '<percentage>';
+    inherits: false;
+    initial-value: 100%;
+}
+
+@property --playerexp-w {
+    syntax: '<percentage>';
+    inherits: false;
+    initial-value: 0%;
+}
+
+@property --opacity {
+    syntax: '<number>';
+    inherits: false;
+    initial-value: 0;
+}
+
+@property --enemyhp0-w {
+    syntax: '<percentage>';
+    inherits: false;
+    initial-value: 100%;
+}
+
+@property --enemyhp1-w {
+    syntax: '<percentage>';
+    inherits: false;
+    initial-value: 100%;
+}
+
+@property --enemyhp2-w {
+    syntax: '<percentage>';
+    inherits: false;
+    initial-value: 100%;
+}
+
+@property --sound-w {
+    syntax: '<percentage>';
+    inherits: false;
+    initial-value: 100%;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #ccc;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #ddd;
+    border-radius: 10px;
+}

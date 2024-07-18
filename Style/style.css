@@ -1,0 +1,623 @@
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    cursor: url('../Public/normalcursor.png'), auto;
+}
+
+#totalscreen {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+#leftcontainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: calc(100% - 50px);
+}
+
+#gameBoard {
+
+    width: 99%;
+    height: 99%;
+    overflow: scroll !important;
+    --webkit-scrollbar-width: none;
+    scrollbar-width: none;
+
+    scroll-behavior: smooth;
+    display: grid;
+    grid-template-columns: repeat(10, 90px);
+    /*90px*/
+    grid-template-rows: repeat(10, 90px);
+    /*90px*/
+    gap: 0px;
+    box-shadow: inset 0 0 10px 0 rgba(0, 0, 0, 0.5);
+    filter: brightness(1.5);
+    overflow: hidden;
+}
+
+.cell {
+    width: 90px;
+    /*90px*/
+    height: 90px;
+    /*90px*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: grab;
+}
+
+#rightcontainer {
+    backdrop-filter: blur(10px);
+    background-color: lightblue;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+    display: flex;
+    mix-blend-mode: multiply;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    width: 45%;
+    height: calc(100% - 10px);
+    overflow: hidden;
+}
+
+.right-up-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    height: 75%;
+    overflow: hidden;
+}
+
+.obstacle {
+    /* background-image: url('../Public/obstacle.png'); */
+    mix-blend-mode: multiply;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: no-drop;
+}
+
+
+/* ================================== 玩家=================================== */
+#PlayerStatusBar {
+    width: 90%;
+    height: 35%;
+    border: 5px solid black;
+    border-radius: 10px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 20px;
+}
+
+#PlayerStatus {
+    font-weight: 600;
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    align-items: center;
+    width: 100%;
+    height: 90%;
+    flex-wrap: wrap;
+    margin-right: 50px;
+}
+
+
+.playerName {
+    font-size: 25px;
+    margin-right: 20px;
+    margin-top: 50px;
+    overflow: hidden;
+    white-space: wrap;
+    --webkit-scrollbar-width: none;
+    scrollbar-width: none;  
+}
+
+.playerhpbar {
+    width: 450px;
+    height: 20px;
+    background-color: red;
+    border-radius: 20px;
+}
+
+.player-innerhpbar {
+    width: var(--playerhp-w);
+    height: 100%;
+    background-color: rgb(71, 245, 7);
+    border-radius: 20px;
+    transition: all 1.2s;
+    text-align: center;
+}
+
+.playermpbar {
+    width: 450px;
+    height: 20px;
+    background-color: lightgray;
+    border-radius: 20px;
+}
+
+.player-innermpbar {
+    width: var(--playermp-w);
+    height: 100%;
+    background-color: rgb(120, 198, 225);
+    border-radius: 20px;
+    transition: all 1.2s ease-in-out;
+    text-align: center;
+}
+
+.playerHP {
+    height: 25%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.playerMP {
+    height: 25%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+
+}
+
+.playerExp {
+    height: 25%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    white-space: nowrap;
+}
+
+.playerexpbar {
+    width: 450px;
+    height: 20px;
+    background-color: lightgray;
+    border-radius: 20px;
+}
+
+.player-innerexpbar {
+    width: var(--playerexp-w);
+    height: 100%;
+    background-color: yellow;
+    border-radius: 20px;
+    transition: all 1.2s ease-in-out;
+    text-align: center;
+}
+
+.PlayerInfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 25%;
+    flex-wrap: wrap;
+}
+
+.PlayerInfo p {
+    text-align: start;
+    font-weight: 600;
+}
+
+/* ================================== 敵人=================================== */
+
+#EnemyStatusBar {
+    width: 90%;
+    border: 5px solid black;
+    border-radius: 10px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 20px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.EnemyStatus {
+    font-weight: 600;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 30%;
+}
+
+.EnemyInfo {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 30%;
+    flex-wrap: wrap;
+}
+
+.EnemyInfo p {
+    text-align: start;
+    font-weight: 600;
+}
+
+.enemyName {
+    font-size: 25px;
+}
+
+.enemyhpbar {
+    width: 450px;
+    height: 20px;
+    background-color: red;
+    border-radius: 20px;
+
+}
+
+#enemyhpbar0 {
+    width: var(--enemyhp0-w);
+    height: 100%;
+    background-color: rgb(71, 245, 7);
+    border-radius: 20px;
+    text-align: center;
+    transition: all 1.2s;
+}
+
+#enemyhpbar1 {
+    width: var(--enemyhp1-w);
+    height: 100%;
+    background-color: rgb(71, 245, 7);
+    border-radius: 20px;
+    text-align: center;
+    transition: all 1.2s;
+}
+
+#enemyhpbar2 {
+    width: var(--enemyhp1-w);
+    height: 100%;
+    background-color: rgb(71, 245, 7);
+    border-radius: 20px;
+    text-align: center;
+    transition: all 1.2s;
+}
+
+#enemyhpbar3 {
+    width: var(--enemyhp1-w);
+    height: 100%;
+    background-color: rgb(71, 245, 7);
+    border-radius: 20px;
+    text-align: center;
+    transition: all 1.2s;
+}
+
+#enemyhpbar4 {
+    width: var(--enemyhp1-w);
+    height: 100%;
+    background-color: rgb(71, 245, 7);
+    border-radius: 20px;
+    text-align: center;
+    transition: all 1.2s;
+}
+
+.right-bottom-content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    margin-top: -10px;
+    gap: 3px;
+    width: 100%;
+    height: 22%;
+}
+
+.right-bottom-content div {
+    position: relative !important;
+    top: 50% !important;
+    display: flex !important;
+    text-align: center !important;
+    justify-content: center !important;
+    align-items: center !important;
+    border: 1px solid #ddd;
+    height: 100%;
+    background-color: white;
+    font-weight: 600;
+}
+
+.right-bottom-content div:hover {
+    background-color: lightgray;
+    color: blue;
+}
+
+/* ==========================彈窗訊息===========================*/
+#dialogforendturn {
+    width: 500px;
+    height: 300px;
+}
+
+#dialogforendturn h2 {
+    text-align: center;
+    font-size: 40px;
+}
+
+#dialogforendturn div {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50%;
+    height: 50%;
+}
+
+#dialogforendturn div button {
+    width: 100px;
+    height: 50px;
+    font-size: 20px;
+    font-weight: 600;
+    cursor: url('../Public/normalcursor.png'), auto;
+    border-radius: 10px;
+    border: 1px;
+}
+
+#dialogforendturn div button:focus {
+    outline: none;
+}
+
+#dialogforendturn div button:hover {
+    background-color: lightgray;
+    color: blue;
+}
+
+
+/* ==========================彈窗訊息===========================*/
+#gameinfodialog {
+    width: 500px;
+    height: 550px;
+    border: none;
+    border-radius: 20px;
+    background-color: rgb(245, 223, 182);
+    overflow: hidden;
+    transition: all 1.2s;
+}
+
+
+#gameinfodialog::backdrop {
+    backdrop-filter: blur(10px);
+}
+
+#dialog-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+#gameinfoletter {
+    width: 100%;
+    height: 60%;
+    background-color: #eee;
+    font-size: 20px;
+    font-weight: 600;
+    text-align: center;
+    border-radius: 20px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    --webkit-scrollbar-width: none;
+    scrollbar-width: none;
+}
+
+#gamesetting {
+    width: 100%;
+    height: 15%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+    border-radius: 20px;
+}
+
+#closebtninfo {
+    width: 100%;
+    height: 10%;
+    background-color: lightgray;
+    font-size: 20px;
+    text-align: center;
+    font-weight: 600;
+    cursor: url('../Public/normalcursor.png'), auto;
+    border-radius: 10px;
+    border: 1px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s;
+
+}
+
+#closebtninfo:hover {
+    background-color: gray;
+    color: blue;
+}
+
+#switchbgmmute {
+    width: 60px;
+    height: 60px;
+    font-size: 20px;
+    padding: 1px;
+    mix-blend-mode: multiply;
+    background-image: url('../Public/music.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+}
+
+#soundbar {
+    width: 380px;
+    height: 18px;
+    background-color: rgb(150, 150, 150);
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+#sound-inner-bar {
+    width: 100%;
+    height: 100%;
+    background-color: rgb(120, 198, 225);
+    border-radius: 20px;
+    transition: all 1.2s;
+    text-align: center;
+}
+
+/* ================================ 技能使用================================== */
+
+#skillsdialog {
+    width: 500px;
+    height: 550px;
+    border: none;
+    border-radius: 20px;
+    background-color: rgb(245, 223, 182);
+    overflow: hidden;
+    transition: all 1.2s;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#skillcontent {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    cursor: url('http://heroworld.gamerhome.com/images/cursor/spec.png'), auto;
+}
+
+#skillsdialog::backdrop {
+    backdrop-filter: blur(10px);
+}
+
+#skilltit {
+    font-size: 38px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 5%;
+}
+
+#skillslists {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    width: 100%;
+    height: 80%;
+    flex-wrap: wrap;
+    overflow-x: hidden;
+    background-color: #eee;
+    overflow-y: scroll;
+    --webkit-scrollbar-width: none;
+    scrollbar-width: none;
+}
+
+#skillsetting {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 8%;
+}
+
+#skillsetting div {
+    width: 48%;
+    height: 100%;
+    background-color: lightgray;
+    font-size: 20px;
+    text-align: center;
+    font-weight: 600;
+    border-radius: 10px;
+    border: 1px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.4s;
+}
+
+#skillsetting div:hover {
+    background-color: gray;
+    color: blue;
+}
+
+.skill {
+    width: 97%;
+    height: 80px;
+    margin-top: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    mix-blend-mode: multiply;
+    cursor: url('http://heroworld.gamerhome.com/images/cursor/spec.png'), auto;
+    border-radius: 20px;
+}
+
+.skill:hover {
+    background-color: lightgray;
+
+}
+
+.skill img {
+    width: 50px;
+    height: 50px;
+}
+
+.skillName {
+    font-size: 25px;
+    font-weight: 600;
+    margin-right: 20px;
+}
+
+.skillMPDescr {
+    color: blueviolet;
+    font-size: 15px;
+}
+
+.skillDescription {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 30%;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    --webkit-scrollbar-width: none;
+    scrollbar-width: none;
+}

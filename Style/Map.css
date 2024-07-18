@@ -1,0 +1,480 @@
+#dialogfortech {
+    width: 1200px;
+    height: 650px;
+    border: none;
+    outline: none;
+    background: none;
+    animation: upappear 1s ease-in-out forwards;
+}
+
+#dialogfortech::backdrop {
+    backdrop-filter: blur(10px);
+}
+
+#techcontainer {
+    display: grid;
+    grid-template-areas:
+        "T T T T"
+        "L M M R";
+    grid-template-columns: 8% 42% 42% 8%;
+    grid-template-rows: 15% 80%;
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+    background-color: wheat;
+
+}
+
+#text-tit {
+    grid-area: T;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    letter-spacing: 3px;
+    font-weight: 600;
+}
+
+#techleftarr {
+    grid-area: L;
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url('../Public/prev.png');
+    background-position: center;
+    background-size: contain;
+    cursor: pointer;
+    background-repeat: no-repeat;
+}
+
+#techrightarr {
+    grid-area: R;
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url('../Public/next.png');
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+
+#texhcontent {
+    grid-area: M;
+    width: 1008px;
+    box-shadow: inset 0 0 10px 0 black;
+    background: #eee;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    --webkit-scroll--webkit-scrollbar-width: none;
+    scrollbar-width: none;
+}
+
+.step {
+    min-width: 100%;
+    height: 100%;
+    text-align: center;
+}
+
+.steptit {
+    font-size: 30px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    margin-top: 20px;
+}
+
+.stepcontent-page {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 20px;
+    font-size: 25px;
+}
+
+#rightpagetech {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#texhforstart {
+    margin-top: 50px;
+    width: 200px;
+    height: 65px;
+    background: rgb(250, 250, 112);
+    color: black;
+    box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    font-size: 25px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    animation: lightanddark2 1.5s infinite;
+}
+
+#texhforstart:hover {
+    background: rgb(207, 207, 23);
+    color: black;
+    box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#showyouinlevel {
+    width: 600px;
+    height: 300px;
+    outline: none;
+    border: none;
+}
+
+#showyouinlevel-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-self: center;
+}
+
+#showyouinlevel-tit {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    font-size: 35px;
+    font-weight: 600;
+    margin-top: 50px;
+    letter-spacing: 2px;
+    width: 90%;
+}
+
+#closebtn-showyouinlevel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: lightgray;
+    border-radius: 10px;
+    font-weight: 600;
+    width: 150px;
+    font-size: 25px;
+    letter-spacing: 1px;
+    height: 70px;
+    margin-top: 50px;
+    transition: all 0.3s;
+}
+
+#closebtn-showyouinlevel:hover {
+    background: #ddd;
+    cursor: pointer;
+}
+
+#lvupdialog {
+    position: absolute;
+    top: -8%;
+    left: -45%;
+    overflow: hidden;
+    width: 21%;
+    height: 600px;
+    font-size: 45px;
+    background: none;
+    font-family: '標楷體';
+    padding: 0 30px;
+    outline: none;
+    border: none;
+    color: rgb(168, 105, 38);
+}
+
+#lvupcontent {
+    width: 100%;
+    height: 100%;
+    background-image: url('../Public/LVBG.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 35px;
+    flex-direction: column;
+    font-family: '微軟正黑體';
+    animation: upappear 1s ease-in-out forwards;
+}
+
+#lvupcontent-inner {
+    width: 90%;
+    height: 62%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#lvuptit {
+    width: 100%;
+    height: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 28px;
+    font-weight: 600;
+}
+
+#lvupinfo {
+    width: 90%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: start;
+    font-size: 25px;
+    font-weight: 600;
+}
+
+#lvupcontent-skill {
+    width: 90%;
+    height: 8%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    font-size: 30px;
+    font-weight: 600;
+}
+
+#showyougetitem {
+    position: absolute;
+    top: 64%;
+    left: -46.5%;
+    overflow: hidden;
+    width: 49.2%;
+    height: 250px;
+    font-size: 45px;
+    background: none;
+    font-family: '標楷體';
+    padding: 0 30px;
+    outline: none;
+    border: none;
+}
+
+#showyougetitem::backdrop {
+    background: none;
+    filter: none;
+}
+
+#showyougetitem-container {
+    width: 100%;
+    height: 100%;
+    background-image: url('../Public/warnbg.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    animation: upappear 1s ease-in-out forwards;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+#showyougetitem-left {
+    width: 28%;
+    height: 100%;
+    background-image: url('../Public/playericontoright.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+#showyougetitem-right {
+    width: 65%;
+    height: 50%;
+    font-weight: 600;
+    font-size: 30px;
+    color: rgb(168, 105, 38);
+    font-family: '微軟正黑體';
+    word-break: break-all;
+}
+
+#showskillname {
+    position: absolute;
+    top: -60%;
+    left: -45%;
+    overflow: hidden;
+    width: 15%;
+    height: 60px;
+    font-size: 45px;
+    background: none;
+    font-family: '標楷體';
+    padding: 0 30px;
+    outline: none;
+    border: none;
+}
+
+#showskillname::backdrop {
+    background: none;
+    filter: none;
+}
+
+#showskillnamecontainer {
+    width: 100%;
+    text-align: center;
+    height: 100%;
+    font-family: '微軟正黑體';
+    font-size: 28px;
+    font-weight: 600;
+    background-image: url('../Public/showskillbg.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    color: rgb(168, 105, 38);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: dispointment 1s ease-in-out forwards;
+    animation-delay: 2s;
+}
+
+.treasure {
+    position: relative;
+    background-image: url('../Public/treasure.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#showturn {
+    position: absolute;
+    top: 50%;
+    left: 12%;
+    transform: translate(-15%, -50%);
+    width: 650px;
+    height: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 50px;
+    text-align: center;
+    color: white;
+    background-color: rgb(250, 250, 112);
+    z-index: -1;
+    border-radius: 20px;
+    box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.5);
+    transition: all 1.5s;
+    opacity: 0;
+}
+
+#showturn::after {
+    content: var(--showturn-letter);
+    font-family: '標楷體';
+    font-weight: 800;
+    font-size: 70px;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #fff;
+    width: 85%;
+    height: 75%;
+    box-shadow: inset 0 0 10px 5px rgba(0, 0, 0, 0.5);
+}
+
+.player {
+    cursor: pointer;
+    background-image: url('../Public/player.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    mix-blend-mode: normal;
+    isolation: isolate;
+    overflow: visible;
+    z-index: 99;
+
+}
+
+.playercanmove {
+    background-color: gray;
+    cursor: pointer;
+    mix-blend-mode: multiply;
+}
+
+.playercanmove:hover {
+    background-color: lightpink;
+    mix-blend-mode: luminosity;
+}
+
+.playercanattack {
+    cursor: url('../Public//attackcursor.png'), auto;
+    background-color: gray;
+    mix-blend-mode: multiply;
+}
+
+.enemy0 {
+    position: relative;
+    /* background-image: url('../Public/0/enemy0.gif'); */
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.enemy1 {
+    position: relative;
+    /* background-image: url('../Public/0/enemy1.gif'); */
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.enemy2 {
+    position: relative;
+    /* background-image: url('../Public/0/enemy2.gif'); */
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.enemy3 {
+    position: relative;
+    /* background-image: url('../Public/0/enemy2.gif'); */
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.enemy4 {
+    position: relative;
+    /* background-image: url('../Public/0/enemy2.gif'); */
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}

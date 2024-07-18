@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Srpg Game</title>
+    <link rel="stylesheet" href="./Style/values.css">
+    <link rel="stylesheet" href="./Style/style.css">
+    <link rel="stylesheet" href="./Style/Map.css">
+    <link rel="stylesheet" href="./Style/Equipments.css">
+    <link rel="stylesheet" href="./Style/Shop.css">
+    <link rel="stylesheet" href="./Style/SaveGame.css">
+    <link rel="stylesheet" href="./Style/RWD.css">
+    <link rel="stylesheet" href="./Style/Animation.css">
+</head>
+
+<body>
+
+    <div id="totalscreen">
+        <div id="showdialogarea"></div>
+        <dialog id="lvupdialog">
+            <div id="lvupcontent">
+                <div id="lvupcontent-inner"></div>
+                <div id="lvupcontent-skill"></div>
+            </div>
+        </dialog>
+        <dialog id="showyougetitem">
+            <div id="showyougetitem-container">
+                <div id="showyougetitem-left"></div>
+                <div id="showyougetitem-right">
+                </div>
+            </div>
+        </dialog>
+        <dialog id="showskillname">
+        </dialog>
+        <dialog id="savegamedialog">
+            <div id="savegamecontent">
+                <div id="savegametit">
+                    存檔
+                </div>
+                <div id="savegamecontainer">
+                    <div id="savegamecontainer-inner">
+                        <div class="saveitem">
+                            <div class="savetititem">一、</div>
+                            <div id="leveltext">關卡:1</div>
+                            <div id="playersaveicon"></div>
+                            <div id="timestamp">2024/7/14 12:30</div>
+                        </div>
+                        <div class="saveitem">
+                            <div class="savetititem">二、</div>
+                            <div id="leveltext">關卡:1</div>
+                            <div id="playersaveicon"></div>
+                            <div id="timestamp">2024/7/14 12:30</div>
+                        </div>
+                        <div class="saveitem">
+                            <div class="savetititem">三、</div>
+                            <div id="leveltext">關卡:1</div>
+                            <div id="playersaveicon"></div>
+                            <div id="timestamp">2024/7/14 12:30</div>
+                        </div>
+                        <div class="saveitem">
+                            <div class="savetititem">四、</div>
+                            <div id="leveltext">關卡:1</div>
+                            <div id="playersaveicon"></div>
+                            <div id="timestamp">2024/7/14 12:30</div>
+                        </div>
+                        <div class="saveitem">
+                            <div class="savetititem">五、</div>
+                            <div id="leveltext">關卡:1</div>
+                            <div id="playersaveicon"></div>
+                            <div id="timestamp">2024/7/14 12:30</div>
+                        </div>
+                    </div>
+                </div>
+                <div id="closebtnsavebtn">
+                    關閉
+                </div>
+            </div>
+
+        </dialog>
+        <dialog id="readfiledialog">
+            <div id="readfilecontent">
+                <div id="readfiletit">
+                    讀取存檔
+                </div>
+                <div id="readfilecontainer">
+                    <div id="readfilecontainer-inner">
+                        <div class="saveitem">
+                            <div class="savetititem">一、</div>
+                            <div id="leveltext">關卡:1</div>
+                            <div id="playersaveicon"></div>
+                            <div id="timestamp">2024/7/14 12:30</div>
+                        </div>
+                        <div class="saveitem">
+                            <div class="savetititem">二、</div>
+                            <div id="leveltext">關卡:1</div>
+                            <div id="playersaveicon"></div>
+                            <div id="timestamp">2024/7/14 12:30</div>
+                        </div>
+                        <div class="saveitem">
+                            <div class="savetititem">三、</div>
+                            <div id="leveltext">關卡:1</div>
+                            <div id="playersaveicon"></div>
+                            <div id="timestamp">2024/7/14 12:30</div>
+                        </div>
+                        <div class="saveitem">
+                            <div class="savetititem">四、</div>
+                            <div id="leveltext">關卡:1</div>
+                            <div id="playersaveicon"></div>
+                            <div id="timestamp">2024/7/14 12:30</div>
+                        </div>
+                        <div class="saveitem">
+                            <div class="savetititem">五、</div>
+                            <div id="leveltext">關卡:1</div>
+                            <div id="playersaveicon"></div>
+                            <div id="timestamp">2024/7/14 12:30</div>
+                        </div>
+                    </div>
+                </div>
+                <div id="closebtnreadfile">
+                    關閉
+                </div>
+            </div>
+        </dialog>
+        <dialog id="shopdialog">
+            <div id="animatecontaier"></div>
+            <div id="shopcontainer">
+                <div id="shopcontent">
+                    <div id="shop-left">
+                        <div id="shop-left-tit">背包</div>
+                        <div id="shop-bagcontainer"></div>
+                    </div>
+                    <div id="shop-right">
+                        <div id="shop-right-tit">商店</div>
+                        <div id="shop-right-container">
+
+                        </div>
+                        <div id="moneyshow">
+                            <div id="moneyicon"></div>
+                            <div id="moneytext">123456</div>
+                        </div>
+                    </div>
+                    <div id="close-shopbtn"></div>
+                </div>
+                <img src="./Public/shop/bg.png" id="bgshop" />
+
+            </div>
+
+        </dialog>
+        <dialog id="equipmentsdialog">
+            <div id="equipment-total">
+                <div id="player-equipments">
+                    <div id="playericon"><img src="./Public/playericon.png" width="190px"></div>
+                    <div id="playername">玩家</div>
+                    <div id="playerability">
+                        <div id="attackability">攻擊<br>45+</div>
+                        <div id="defenceability">防禦<br>23</div>
+                        <div id="avoidability">閃避<br>30%</div>
+                    </div>
+                    <div id="player-current-equipment">
+                        <div id="player-weapon">
+                            <div class="equipmentclassify">武器</div>
+                            <div class="weaponicon"></div>
+                            <div id="weaponname"></div>
+                        </div>
+                        <div id="player-armor">
+                            <div class="equipmentclassify">盔甲</div>
+                            <div class="armoricon"></div>
+                            <div id="armorname"></div>
+                        </div>
+                        <div id="player-fitting">
+                            <div class="equipmentclassify">飾品</div>
+                            <div class="fittingicon"></div>
+                            <div id="fittingname"></div>
+                        </div>
+                    </div>
+                </div>
+                <div id="player-bag">
+                    <div id="player-bag-title">背包</div>
+                    <div id="bagcontainer">
+                        <div class="bagitem">
+                            <div class="bagclassify">武器</div>
+                            <div class="bagitemicon" id="purple-sword-icon"></div>
+                            <div class="bagitemname">紫金劍</div>
+                        </div>
+                        <div class="bagitem">
+                            <div class="bagclassify">武器</div>
+                            <div class="bagitemicon" id="gold-sword-icon"></div>
+                            <div class="bagitemname">古劍‧龍形</div>
+                        </div>
+                        <div class="bagitem">
+                            <div class="bagclassify">武器</div>
+                            <div class="bagitemicon" id="normal-sword-icon"></div>
+                            <div class="bagitemname">長劍</div>
+                        </div>
+                        <div class="bagitem">
+                            <div class="bagclassify">飾品</div>
+                            <div class="bagitemicon" id="clouded-ring-icon"></div>
+                            <div class="bagitemname">雲龍珠</div>
+                        </div>
+                        <div class="bagitem">
+                            <div class="bagclassify">飾品</div>
+                            <div class="bagitemicon"></div>
+                            <div class="bagitemname">雲龍珠</div>
+                        </div>
+                        <div class="bagitem">
+                            <div class="bagclassify">飾品</div>
+                            <div class="bagitemicon"></div>
+                            <div class="bagitemname">雲龍珠</div>
+                        </div>
+                        <div class="bagitem">
+                            <div class="bagclassify">飾品</div>
+                            <div class="bagitemicon"></div>
+                            <div class="bagitemname">雲龍珠</div>
+                        </div>
+                    </div>
+                </div>
+                <div id="item-info">
+                    <div id="closeequipbtn">
+                    </div>
+                    <div id="iteminfocontent">
+                        <div class="iteminfoicon" id="purple-sword-icon"></div>
+                        <div class="iteminfoname">紫金劍</div>
+                        <div class="iteminfodesc">攻擊力+20</div>
+                        <div class="iteminfobtns">
+                            <div class="requipbtbn">裝備</div>
+                            <div class="discardbtn">丟棄</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </dialog>
+        <dialog id="skillsdialog">
+            <div id="skillcontent">
+                <div id="skilltit">
+                    <img src="./Public/skilltiticon.png" width="50px" />
+                    法術
+                </div>
+                <div id="skillslists">
+
+                </div>
+                <div id="skillsetting">
+                    <div id="skillcancel">取消</div>
+                </div>
+            </div>
+        </dialog>
+        <dialog id="dialogforendturn">
+            <h2><img src="./Public/endicon.png" width="30px" style="margin-right: 5px;" />確定結束回合嗎？</h2>
+            <div>
+                <button id="okbtn">確定</button>
+                <button id="nobtn">不了</button>
+            </div>
+        </dialog>
+        <dialog id="gameinfodialog">
+            <div id="dialog-content">
+                <div id="gameinfoletter">
+                    <h2><img src="./Public/gameicon.png" width="30px" style="margin-right: 5px;" />遊戲說明</h2>
+                    <p><img src="./Public/win.png" width="25px" />勝利條件：擊敗所有敵人</p>
+                    <p><img src="./Public/lose.png" width="25px" />失敗條件：玩家自己陣亡</p>
+                    <p style="text-align: left;width: 90%; margin: 0 auto;font-weight: 400;">
+                        規則說明：
+                        <br>
+                        1.主動攻擊的一方是不會有閃避機率的。
+                        <br>
+                        2.BOSS的攻擊是<b>100%</b>會命中的。
+                        <br>
+                        3.撿寶箱是不能做任何操作的。
+
+
+                    </p>
+                </div>
+                <div id="gamesetting">
+                    <div id="switchbgmmute">
+                    </div>
+                    <div id="soundbar">
+                        <div id="sound-inner-bar"></div>
+                    </div>
+                </div>
+                <div id="closebtninfo">
+                    關閉
+                </div>
+            </div>
+        </dialog>
+        <div id="leftcontainer">
+            <div id="gameBoard"></div>
+            <div id="BattleScreen" style="display: none;"></div>
+            <div id="showturn"></div>
+        </div>
+
+        <div id="rightcontainer">
+            <div class="right-up-content">
+                <div id="PlayerStatusBar">
+                    <div id="PlayerStatus">
+                        <img src="./Public/player.png" width="57px">
+                        <div class="playerName">玩家</div>
+                        <div class="playerHP">
+                            <div class="playerhpbar">
+                                <div class="player-innerhpbar"></div>
+                            </div>
+                        </div>
+                        <div class="playerMP">
+                            <div class="playermpbar">
+                                <div class="player-innermpbar"></div>
+                            </div>
+                        </div>
+                        <div class="playerExp">
+                            <div class="playerexpbar">
+                                <div class="player-innerexpbar"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="PlayerInfo"></div>
+                </div>
+
+                <div id="EnemyStatusBar"></div>
+            </div>
+
+            <div class="right-bottom-content">
+                <div id="attackButton">
+                    <img src="./Public/attackicon.png" width="30px" style="margin-right: 5px;" />
+                    攻擊
+                </div>
+                <div id="skillButton">
+                    <img src="./Public/skillicon.png" width="30px" style="margin-right: 5px;" />
+                    法術
+                </div>
+                <div id="equipmentButton">
+                    <img src="./Public/equipmenticon.png" width="30px" style="margin-right: 5px;" />
+                    裝備
+                </div>
+                <div id="cancelButton">
+                    <img src="./Public/cancelicon.png" width="30px" style="margin-right: 5px;" />
+                    取消
+                </div>
+                <div id="EndGameTurn">
+                    <img src="./Public/endturnicon.png" width="30px" style="margin-right: 5px;" />
+                    結束回合
+                </div>
+                <div id="GameInstructionbtn">
+                    <img src="./Public/settingicon.png" width="30px" style="margin-right: 5px;" />
+                    遊戲說明
+                </div>
+                <div id="ShopButton">
+                    <img src="./Public/shopbtnicon.png" width="30px" style="margin-right: 5px;" />
+                    商店
+                </div>
+                <div id="SavefileButton">
+                    <img src="./Public/savebtnicon.png" width="30px" style="margin-right: 5px;" />
+                    存檔
+                </div>
+                <div id="ReadfileButton">
+                    <img src="./Public/readbtnicon.png" width="30px" style="margin-right: 5px;" />
+                    讀取檔案
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+<script src="./App/RoleInfo.js"></script>
+<script src="./App/MoveRule.js"></script>
+<script src="./App/ChineseTurn.js"></script>
+<script src="./App/PlayerSkills.js"></script>
+<script src="./App/ShowDialog.js"></script>
+<script src="./App/Main.js"></script>
+<script src="./App/Player.js"></script>
+<script src="./App/Enemy.js"></script>
+<script src="./App/BattleProcess.js"></script>
+<script src="./App/Equipments.js"></script>
+<script src="./App/Shop.js"></script>
+<script src="./App/SaveProcess.js"></script>
+<script src="./App/AdvancedLoaded.js"></script>
+
+
+</html>

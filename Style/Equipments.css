@@ -1,0 +1,483 @@
+#equipmentsdialog {
+    width: 1400px;
+    height: 650px;
+    outline: none;
+    border: none;
+    background: none;
+    overflow: hidden;
+}
+
+#equipmentsdialog::backdrop {
+    backdrop-filter: blur(10px);
+}
+
+#equipment-total {
+    background-color: #f7c197;
+    display: grid;
+    background-blend-mode: multiply;
+    border-radius: 20px;
+    grid-template-columns: 2fr 3fr 2fr;
+    grid-template-rows: 1fr;
+    height: 100%;
+    gap: 5px;
+    box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.6);
+}
+
+/*====================================左============================================*/
+#player-equipments {
+    position: relative;
+    top: 50%;
+    left: 60%;
+    transform: translate(-58%, -50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: #eee;
+    width: 99%;
+    height: 95%;
+    border-radius: 20px;
+    box-shadow: inset 0 0 10px 5px rgba(0, 0, 0, 0.6);
+}
+
+#playername {
+    margin-bottom: auto;
+    font-size: 35px;
+    font-weight: bold;
+    color: black;
+}
+
+#playerability {
+    font-size: 25px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin: 0 20px;
+    align-items: center;
+    text-align: center;
+    font-weight: 600;
+    width: 100%;
+    height: 30%;
+}
+
+#player-current-equipment {
+    font-size: 22px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    font-weight: 600;
+    width: 90%;
+    height: 40%;
+}
+
+#weaponname,
+#armorname,
+#fittingname {
+    font-size: 20px;
+    font-weight: 400;
+    color: black;
+}
+
+#player-weapon {
+    height: 65%;
+    width: 30%;
+    padding: 0 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    border-radius: 10px;
+    background-color: #ddd;
+    box-shadow: inset 0 0 10px 0px rgba(0, 0, 0, 0.6);
+}
+
+.weaponicon {
+    width: 85px;
+    height: 85px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    border: 3px solid white;
+    border-radius: 10px;
+}
+
+@keyframes lightanddark {
+    0% {
+        filter: brightness(1);
+    }
+
+    50% {
+        filter: brightness(1.5);
+    }
+
+    100% {
+        filter: brightness(1);
+    }
+}
+
+
+#player-armor {
+    height: 65%;
+    width: 30%;
+    padding: 0 5px;
+    background-color: #ddd;
+    box-shadow: inset 0 0 10px 0px rgba(0, 0, 0, 0.6);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    border-radius: 10px;
+}
+
+.armoricon {
+    width: 85px;
+    height: 85px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: lightgray;
+    border: 3px solid white;
+    border-radius: 10px;
+}
+
+#player-fitting {
+    height: 65%;
+    padding: 0 5px;
+    width: 30%;
+    background-color: #ddd;
+    box-shadow: inset 0 0 10px 0px rgba(0, 0, 0, 0.6);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    border-radius: 10px;
+}
+
+.fittingicon {
+    width: 85px;
+    height: 85px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: lightgray;
+    border: 3px solid white;
+    border-radius: 10px;
+}
+
+/* ======================================中========================================*/
+#player-bag {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: #eee;
+    width: 98%;
+    height: 95%;
+    border-radius: 20px;
+    box-shadow: inset 0 0 10px 5px rgba(0, 0, 0, 0.6);
+    overflow: hidden;
+}
+
+#player-bag-title {
+    font-size: 35px;
+    font-weight: bold;
+    color: black;
+    margin-bottom: 10px;
+}
+
+#bagcontainer {
+    width: 96%;
+    height: 85%;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: start;
+    flex-direction: row;
+    flex-wrap: wrap;
+    overflow-y: auto;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #ddd;
+    gap: 10px;
+    align-content: flex-start;
+    box-shadow: inset 0 0 10px 0px rgba(0, 0, 0, 0.6);
+    --webkit-scrollbar-width: none;
+    scrollbar-width: none;
+
+
+
+}
+
+.bagitem {
+    width: 130px;
+    height: 165px;
+    display: flex;
+    cursor: pointer;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    border-radius: 10px;
+    background-color: #eee;
+    box-shadow: 0 0 10px 0px rgba(0, 0, 0, 0.5);
+}
+
+.bagclassify {
+    font-size: 20px;
+    font-weight: 600;
+    color: black;
+
+}
+
+.bagitemicon {
+    width: 85px;
+    height: 85px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    border: 3px solid white;
+    border-radius: 10px;
+    background-color: lightgray;
+}
+
+.bagitemname {
+    font-size: 20px;
+    font-weight: 400;
+    color: black;
+}
+
+
+/*======================================物品樣式==============================================*/
+#normal-sword-icon {
+    background-image: url('../Public/weapons/weapon0.png') !important;
+    border: 2px solid gray !important;
+}
+
+#normal2-sword-icon {
+    background-image: url('../Public/weapons/weapon1.png') !important;
+    border: 2px solid gray !important;
+}
+
+#purple-sword-icon {
+    background-image: url('../Public/weapons/weapon2.png') !important;
+    box-shadow: 0 0 5px purple,
+        0 0 25px purple,
+        0 0 50px purple,
+        0 0 200px purple !important;
+    border: 2px solid purple !important;
+    animation: lightanddark 1.5s infinite ease-in-out !important;
+}
+
+#gold-sword-icon {
+    background-image: url('../Public/weapons/weapon3.png') !important;
+    box-shadow: 0 0 5px orange,
+        0 0 25px orange,
+        0 0 50px orange,
+        0 0 200px orange !important;
+    border: 2px solid orange !important;
+    animation: lightanddark 1.5s infinite ease-in-out !important;
+}
+
+#normal-armor-icon {
+    background-image: url('../Public/armors/armor0.png') !important;
+    border: 2px solid gray !important;
+}
+
+#silver-armor-icon {
+    background-image: url('../Public/armors/armor1.png') !important;
+    
+    border: 2px solid gray !important;
+}
+
+#brown-armor-icon {
+    background-image: url('../Public/armors/armor2.png') !important;
+    box-shadow: 0 0 5px rgb(96, 22, 22),
+        0 0 25px rgb(96, 22, 22),
+        0 0 50px rgb(96, 22, 22),
+        0 0 200px rgb(96, 22, 22) !important;
+    border: 2px solid rgb(96, 22, 22) !important;
+    animation: lightanddark 1.5s infinite ease-in-out !important;
+}
+
+#green-armor-icon {
+    background-image: url('../Public/armors/armor3.png') !important;
+    box-shadow: 0 0 5px greenyellow,
+        0 0 25px greenyellow,
+        0 0 50px greenyellow,
+        0 0 200px greenyellow !important;
+    border: 3px solid greenyellow !important;
+    animation: lightanddark2 1.5s infinite ease-in-out !important;
+}
+
+@keyframes lightanddark2 {
+    0% {
+        filter: brightness(1);
+    }
+
+    50% {
+        filter: brightness(1.2);
+    }
+
+    100% {
+        filter: brightness(1);
+    }
+}
+
+#normal-fitting-icon {
+    background-image: url('../Public/fitting/fitting0.png') !important;
+    border: 2px solid gray !important;
+}
+
+#demon-fitting-icon {
+    background-image: url('../Public/fitting/fitting1.png') !important;
+    box-shadow: 0 0 5px aqua,
+        0 0 25px aqua,
+        0 0 50px aqua,
+        0 0 200px aqua !important;
+    border: 2px solid aqua !important;
+    animation: lightanddark2 1.5s infinite ease-in-out !important;
+}
+
+#clouded-ring-icon {
+    background-image: url('../Public/fitting/fitting2.png') !important;
+    box-shadow: 0 0 5px blue,
+        0 0 25px blue,
+        0 0 50px blue,
+        0 0 200px blue !important;
+    border: 2px solid blue !important;
+    animation: lightanddark 1.5s infinite ease-in-out !important;
+}
+
+#Liangyi-fitting-icon {
+    background-image: url('../Public/fitting/fitting3.png') !important;
+    box-shadow:
+        8px 8px 100px 10px orange,
+        -8px -8px 10px 2px purple,
+        5px 5px 15px 0px orange !important;
+    border: 5px solid !important;
+    border-left-color: purple !important;
+    border-right-color: orange !important;
+    border-top-color: purple !important;
+    border-bottom-color: orange !important;
+    animation: lightanddark 1.5s infinite ease-in-out !important;
+}
+
+#Eating-recoverhp0-icon {
+    background-image: url('../Public/eatting/eatting0.png') !important;
+    border: 2px solid gray !important;
+}
+
+#Eating-recovermp0-icon {
+    background-image: url('../Public/eatting/eatting1.png') !important;
+    border: 2px solid gray !important;
+}
+
+#Eating-recoverhp1-icon {
+    background-image: url('../Public/eatting/eatting2.png') !important;
+    border: 2px solid gray !important;
+}
+
+
+
+/*===================================右============================================*/
+#closeequipbtn {
+    background-image: url('../Public/closeequipment.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 45px;
+    height: 45px;
+    position: relative;
+    float: right;
+}
+
+#iteminfocontent {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 95%;
+    height: 90%;
+    background-color: #eee;
+    border-radius: 20px;
+    box-shadow: inset 0 0 10px 5px rgba(0, 0, 0, 0.6);
+}
+
+.iteminfoicon {
+    width: 150px;
+    height: 150px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    border: 3px solid white;
+    border-radius: 10px;
+    background-color: lightgray;
+}
+
+.iteminfoname {
+    font-size: 30px;
+    font-weight: 600;
+    color: black;
+}
+
+.iteminfodesc {
+    font-size: 20px;
+    font-weight: 400;
+    color: black;
+    text-align: center;
+}
+
+.iteminfobtns {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    height: 10%;
+}
+
+.requipbtbn {
+    width: 100px;
+    height: 40px;
+    font-size: 20px;
+    font-weight: 600;
+    color: black;
+    background-color: lightgreen;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s;
+
+}
+
+.requipbtbn:hover {
+    background-color: rgb(12, 240, 12);
+}
+
+.discardbtn {
+    width: 100px;
+    height: 40px;
+    font-size: 20px;
+    font-weight: 600;
+    color: black;
+    background-color: rgb(240, 82, 82);
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s;
+}
+
+.discardbtn:hover {
+    background-color: rgb(240, 12, 12);
+}

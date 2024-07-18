@@ -1,0 +1,272 @@
+#shopdialog {
+    width: 85vw;
+    height: 800px;
+    outline: none;
+    border: none;
+    overflow: visible;
+    background: none;
+}
+
+#shopdialog::backdrop {
+    backdrop-filter: blur(10px);
+}
+
+#animatecontaier {
+    position: absolute;
+    width: 100%;
+    height: 700px;
+    transform: scaleY(1.4);
+    transform-origin: center;
+    overflow: visible;
+    background-image: url('../Public/shop/bg.gif');
+    background-repeat: no-repeat;
+    background-size: cover;
+    animation: disappear 1s forwards;
+    animation-delay: 1.43s;
+}
+
+#shopcontainer {
+    position: relative;
+    transform-origin: center;
+    width: 100%;
+    height: 700px;
+    overflow: visible;
+    background-repeat: no-repeat;
+    background-size: contain;
+    opacity: 0;
+    animation: appear 1s forwards;
+    animation-delay: 1.4s;
+    transition: all 1s ease;
+}
+
+#bgshop {
+    width: 100%;
+    margin-right: auto;
+    height: 700px;
+    transform: scaleY(1.4);
+}
+
+#shopcontent {
+    position: absolute;
+    width: 80%;
+    height: 700px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 99;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+#shop-left {
+    position: relative;
+    width: 48%;
+    height: 97%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    /* background: rgba(0, 0, 0, 0.5); */
+}
+
+#shop-left-tit {
+    font-size: 50px;
+    font-weight: 600;
+    text-align: center;
+    justify-items: start;
+    font-family: var(--書法體3);
+
+}
+
+#shop-bagcontainer {
+    width: 85%;
+    height: 82%;
+    border-right: 9px solid rgb(52, 51, 51, 0.9);
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    overflow-y: auto;
+    overflow-x: hidden;
+    gap: 20px;
+    --webkit-scrollbar-width: none;
+    scrollbar-width: none;
+}
+
+.shopbagitem {
+    width: 90%;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    transition: all 0.4s;
+    padding: 5px;
+}
+
+.shopbagclassify {
+    font-size: 25px;
+    font-weight: 600;
+    font-family: var(--書法體3);
+}
+
+.shopbagicon {
+    width: 65px;
+    height: 65px;
+    border: 5px solid white;
+    border-radius: 10px;
+    background-color: #ddd;
+    margin-right: 80px;
+    background-size: contain;
+}
+
+.shopbagname {
+    width: 20%;
+    white-space: nowrap;
+    font-family: '標楷體';
+    letter-spacing: 2px;
+    font-size: 20px;
+}
+
+
+
+/*========================================右==================================*/
+#close-shopbtn {
+    width: 50px;
+    height: 50px;
+    background: url('../Public/closeequipment.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+#shop-right {
+    position: relative;
+    width: 60%;
+    height: 99%;
+    overflow-x: visible;
+    overflow-y: hidden;
+    display: flex;
+    --webkit-scrollbar-width: none;
+    scrollbar-width: none;
+    flex-direction: column;
+    gap: 20px;
+    /* background: rgba(0, 0, 0, 0.5); */
+}
+
+#shop-right-tit {
+    font-size: 50px;
+    font-weight: 600;
+    text-align: center;
+    font-family: var(--書法體3);
+}
+
+#shop-right-container {
+    width: 100%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    gap: 20px;
+    align-items: center;
+    overflow-x: visible;
+    overflow-y: auto;
+    --webkit-scrollbar-width: none;
+    scrollbar-width: none;
+}
+
+.shopitem {
+    font-family: "標楷體";
+    width: 100%;
+    height: 80px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    padding: 8px 0px;
+    border-bottom: 1px solid gray;
+    transition: all 0.3s;
+}
+
+.shopclassify {
+    width: 10%;
+    font-size: 25px;
+    font-weight: 600;
+    white-space: nowrap;
+    font-family: var(--書法體3);
+}
+
+.shopitem-icon {
+    width: 65px;
+    height: 65px;
+    border: 3px solid white;
+    border-radius: 10px;
+    background-size: cover;
+}
+
+.shopitem-name {
+    width: 20%;
+    font-size: 20px;
+    white-space: nowrap;
+    text-overflow: hidden;
+    text-wrap: nowrap;
+}
+
+.moneyneed {
+    font-size: 20px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 800;
+    color: black;
+    letter-spacing: 2px;
+    font-weight: 600;
+}
+
+.buybtn {
+    font-size: 20px;
+    color: white;
+    background: rgba(0, 0, 0, 0.65);
+    padding: 8px 25px;
+    letter-spacing: 2px;
+    border-radius: 40%;
+    cursor: pointer;
+    transition: all 0.4s;
+}
+
+.buybtn:hover {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+
+
+
+
+
+#moneyshow {
+    position: relative;
+    transform: translate(35%, 10%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+#moneyicon {
+    width: 50px;
+    height: 50px;
+    background-image: url('../Public/moneyidon.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+#moneytext {
+    height: 55%;
+    display: flex;
+    color: white;
+    letter-spacing: 5px;
+    text-shadow: 5px 5px 10px black;
+    font-weight: 600;
+    font-size: 20px;
+    justify-content: center;
+    align-items: center;
+}

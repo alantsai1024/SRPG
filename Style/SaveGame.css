@@ -1,0 +1,278 @@
+#readfiledialog {
+    width: 800px;
+    height: 600px;
+    outline: none;
+    border: none;
+    background: none;
+}
+
+#readfilecontent {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    gap: 15px;
+    border-radius: 20px;
+    background-color: rgb(245, 223, 182);
+}
+
+#readfiletit {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    font-weight: 800;
+    color: #333;
+}
+
+#readfilecontainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: nowrap;
+    width: 95%;
+    height: 80%;
+    gap: 10px;
+    overflow: hidden;
+    border-radius: 20px;
+    background-color: #ddd;
+}
+
+#readfilecontainer-inner {
+    width: 100%;
+    height: 95%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.saveitem {
+    width: 98%;
+    height: 30%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 10px;
+    background-color: #fff;
+    cursor: pointer;
+    box-shadow: 0 0 10px 5px #aaa;
+}
+
+.saveitem:hover {
+    background-color: #f0f0f0;
+}
+
+#closebtnreadfile {
+    width: 200px;
+    height: 60px;
+    font-size: 20px;
+    font-weight: bold;
+    background-color: lightgray;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+#closebtnreadfile:hover {
+    background-color: gray;
+}
+
+.saveitem {
+    width: 98%;
+    height: 30%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 10px;
+    background-color: #fff;
+    cursor: pointer;
+    box-shadow: 0 0 10px 5px #aaa;
+}
+
+.savetititem {
+    width: 15%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+#leveltext {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+}
+
+#playersaveicon {
+    background-image: url('../Public/playericon.png');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 20%;
+    height: 100%;
+}
+
+#timestamp {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* ================================存檔=========================================== */
+
+#savegamedialog {
+    width: 800px;
+    height: 600px;
+    outline: none;
+    border: none;
+    background: none;
+}
+
+#savegamecontent {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    gap: 15px;
+    border-radius: 20px;
+    background-color: rgb(245, 223, 182);
+}
+
+#savegametit {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    font-weight: 800;
+    color: #333;
+}
+
+#savegamecontainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: nowrap;
+    width: 95%;
+    height: 80%;
+    gap: 10px;
+    overflow: hidden;
+    border-radius: 20px;
+    background-color: #ddd;
+}
+
+#savegamecontainer-inner {
+    width: 100%;
+    height: 95%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    gap: 10px;
+}
+
+.saveitem {
+    width: 98%;
+    height: 30%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 10px;
+    background-color: #fff;
+    cursor: pointer;
+    box-shadow: 0 0 10px 5px #aaa;
+}
+
+.saveitem:hover {
+    background-color: #f0f0f0;
+}
+
+#closebtnsavegame {
+    width: 200px;
+    height: 60px;
+    font-size: 20px;
+    font-weight: bold;
+    background-color: lightgray;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+#closebtnsavegame:hover {
+    background-color: gray;
+}
+
+.saveitem {
+    width: 98%;
+    height: 30%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 10px;
+    background-color: #fff;
+    cursor: pointer;
+    box-shadow: 0 0 10px 5px #aaa;
+}
+
+.savetititem {
+    width: 15%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+#leveltext {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+}
+
+#playersaveicon {
+    background-image: url('../Public/playericon.png');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 20%;
+    height: 100%;
+}
+
+#timestamp {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+}
+
+#closebtnsavebtn {
+    width: 200px;
+    height: 60px;
+    font-size: 20px;
+    font-weight: bold;
+    background-color: lightgray;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+#closebtnsavebtn:hover {
+    background-color: gray;
+}
